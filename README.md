@@ -1,116 +1,81 @@
 ---
-name: 'ansible-galaxy-role-skeleton'
-about: 'Project template for Ansible Galaxy Roles.'
-comments: true
-feedback: true
+title: 'Role for virtualhost_role'
+description: 'Quickstart and examples for demonstrating the role capabilities.'
 ---
 
-# Ansible Galaxy Role Skeleton
+# Ansible Role: Virtualhost_role
+
+## Status
+
+[![Build Status](https://travis-ci.org/<class 'jinja2.utils.Namespace'>/virtualhost_role.svg?branch=master)](https://travis-ci.org/<class 'jinja2.utils.Namespace'>/virtualhost_role)
 
 ## Description
 
-Ansible Galaxy Role Skeleton is used to quickly create new Ansible Galaxy roles.
+Virtualhost_role is an Ansible role used to setup and maintain production grade services.
+
+## Roadmap
+
+* [ROADMAP.md](ROADMAP.md)
+
+## References
+
+* [docs.ansible.com](https://docs.ansible.com/)
+* [On Ansible Galaxy](https://galaxy.ansible.com/<class 'jinja2.utils.Namespace'>/virtualhost_role)
 
 ## Requirements
 
-- Ansible 2.9+
-- Python 3.4+
+### Production
 
-## Usage
+* Ansible
 
-#### Role Names
+### For Local Testing
 
-##### Roles long name
+* [Vagrant](https://www.vagrantup.com/) - (Tested using version 2.1.1)
+* Vagrant plugins:
+  * [vagrant-disksize (0.1.2)](https://github.com/<class 'jinja2.utils.Namespace'>/vagrant-disksize)
+  * [vagrant-libvirt](https://github.com/<class 'jinja2.utils.Namespace'>/vagrant-libvirt)
+  * vai (0.9.3) - For testing with multiple vms [vagrant-plugin-vai](https://github.com/<class 'jinja2.utils.Namespace'>/vagrant-plugin-vai)
+  * [vagrant-vbguest (0.15.2) - Recommended vagrant-vbguest](https://github.com/<class 'jinja2.utils.Namespace'>/vagrant-vbguest)
+* [Virtual Box](https://www.virtualbox.org/)
+  * Tested using Version 5.2.14 r123301 (Qt5.6.1)
 
-Used as the roles repository name in cases where you have a single role per repository.
+## Variables
 
-```shell
-ansible-role-%{specific_role}
-```
+### defaults/main.yml
 
-##### Roles short name
+* [defaults/main.yml](defaults/main.yml) contains all of the required variables.
 
-Used when creating a new role using this project.:
+### project_name/site.yml example
 
-```shell
-%{specific_role}
-```
+* [example_virtualhost_role.yml](files/example_site.yml) may contain an example entry.
 
-### Setup
+## Testing
 
-#### Clone project fork
-
-Clone your customised personal or business fork to your Ansible projects directory
-
-```shell
-mkdir ~/projects
-cd ~/projects
-git clone git@gitlab.cherubits.hu:oss/ansible-galaxy-roles/ansible-galaxy-role-skeleton.git
-export ALTERNATIVE_ROLE_SKELETON_PATH=~/projects/ansible-galaxy-role-skeleton
-```
-
-#### Create your role
-
-##### Syntax example
+To test with all VM's defined in Vagrantfile run the following:
 
 ```shell
-ansible-galaxy init --role-skeleton=ALTERNATIVE_ROLE_SKELETON_PATH %{specific_role}
+cd roles/virtualhost_role
+vagrant up
 ```
 
-#### Real world usage examples:
-
-##### To create a new role
-
+To run on a specific VM's
 ```shell
-mkdir -p ~/projects/ansible-%{specific_project}-playbook/roles
-cd ~/projects/ansible-%{specific_project}-playbook/roles
-ansible-galaxy init --role-skeleton=~/projects/ansible-galaxy-role-skeleton/skeleton %{specific_role} -vvv
+vagrant up xenial
 ```
 
-##### To overwrite an existing role
+### VM's tested with Vagrant and Virtualbox
 
-```shell
-cd ~/projects/ansible-galaxy-role-skeleton/roles
-ansible-galaxy init --role-skeleton=~/projects/ansible-galaxy-role-skeleton/skeleton -f %{short-name-of-existing-role} -vvv
-```
+pass, fail, untested, unsupported
 
-##### Set up Molecule environment
 
-```shell script
-virtualenv --python=/usr/bin/python3.7 .env
-source .env/bin/activate
-pip install molecule docker molecule[lint] molecule[docker]
-```
+| OS | Version | Distribution | Supported [^1](#) | Results  |
+| :--- | :---: | :---: | :---: | :---: |
 
-##### Set up your default Molecule scenario
 
-```shell
-molecule init scenario -s default -d lxd -r %{short-name-of-role}
-```
+## Authors
 
-## Troubleshooting
+- [<class 'jinja2.utils.Namespace'>](mailto:<class 'jinja2.utils.Namespace'>)
 
-### Molecule
+## License: [MIT](https://tldrlegal.com/license/mit-license)
 
-#### pytest bug: Fix for error"AttributeError: 'Config' object has no attribute 'cache'
-
-* [Possible bug with the 3.10.0 release #4304](https://github.com/pytest-dev/pytest/issues/4304)
-
-```shell
-touch molecule/default/pytest.ini" like this one.
-```
-
-```ini
-[pytest]
-addopts = -p no:cacheprovider -p no:stepwise
-```
-
-## Author(s)
-
-- [László Hegedűs](mailto:laszlo.hegedus@cherubits.hu)
-- [Christopher Steel](mailto:christopher.steel@mcgill.ca)
-
-## License 
-
-[MIT](https://tldrlegal.com/license/mit-license)
-
+* virtualhost_role generated using [ansible_collection_skeleton](https://github.com/<class 'jinja2.utils.Namespace'>/ansible_collection_skeleton)

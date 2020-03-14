@@ -1,10 +1,9 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
+title: "[BUG] "
+labels: bug
+assignees: lordoftheflies
 ---
 
 **Describe the bug**
@@ -31,8 +30,8 @@ If applicable, add screenshots to help explain your problem.
 **Smartphone (please complete the following information):**
  - Device: [e.g. iPhone6]
  - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+ - Browser name and version [e.g. stock browser, safari 10]
+ - NodeJS version [e.g. 8.11.1]
 
 **Additional context**
 Add any other context about the problem here.

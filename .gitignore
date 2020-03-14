@@ -1,16 +1,16 @@
-# temp files
 *~
 .swp
-
-# others
-
 *.log
 .private
 .prv
 .retry
-vagrant.retry
+*.retry
+.ansible
+.ansible-galaxy
 .vagrant
 .vault
 generated_inventory
-
+.env/
 .idea/
+.venv
+*.pyc
