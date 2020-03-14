@@ -1,0 +1,6 @@
+--- # virtualhost_role/tests/travis_test.yml
+
+- hosts: localhost
+  become: true
+  roles:
+    - virtualhost_role

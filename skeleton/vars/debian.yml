@@ -1,0 +1,5 @@
+---
+# roles/virtualhost_role/vars/debian.yml
+
+# Debian specific vars
+virtualhost_role_package_extension: 'deb'
