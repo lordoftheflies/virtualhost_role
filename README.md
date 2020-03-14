@@ -7,7 +7,7 @@ description: 'Quickstart and examples for demonstrating the role capabilities.'
 
 ## Status
 
-[![Build Status](https://travis-ci.org/<class 'jinja2.utils.Namespace'>/virtualhost_role.svg?branch=master)](https://travis-ci.org/<class 'jinja2.utils.Namespace'>/virtualhost_role)
+[![Build Status](https://travis-ci.org/lordoftheflies/virtualhost_role.svg?branch=master)](https://travis-ci.org/lordoftheflies/virtualhost_role)
 
 ## Description
 
@@ -20,7 +20,7 @@ Virtualhost_role is an Ansible role used to setup and maintain production grade 
 ## References
 
 * [docs.ansible.com](https://docs.ansible.com/)
-* [On Ansible Galaxy](https://galaxy.ansible.com/<class 'jinja2.utils.Namespace'>/virtualhost_role)
+* [On Ansible Galaxy](https://galaxy.ansible.com/lordoftheflies/virtualhost_role)
 
 ## Requirements
 
@@ -32,10 +32,10 @@ Virtualhost_role is an Ansible role used to setup and maintain production grade 
 
 * [Vagrant](https://www.vagrantup.com/) - (Tested using version 2.1.1)
 * Vagrant plugins:
-  * [vagrant-disksize (0.1.2)](https://github.com/<class 'jinja2.utils.Namespace'>/vagrant-disksize)
-  * [vagrant-libvirt](https://github.com/<class 'jinja2.utils.Namespace'>/vagrant-libvirt)
-  * vai (0.9.3) - For testing with multiple vms [vagrant-plugin-vai](https://github.com/<class 'jinja2.utils.Namespace'>/vagrant-plugin-vai)
-  * [vagrant-vbguest (0.15.2) - Recommended vagrant-vbguest](https://github.com/<class 'jinja2.utils.Namespace'>/vagrant-vbguest)
+  * [vagrant-disksize (0.1.2)](https://github.com/lordoftheflies/vagrant-disksize)
+  * [vagrant-libvirt](https://github.com/lordoftheflies/vagrant-libvirt)
+  * vai (0.9.3) - For testing with multiple vms [vagrant-plugin-vai](https://github.com/lordoftheflies/vagrant-plugin-vai)
+  * [vagrant-vbguest (0.15.2) - Recommended vagrant-vbguest](https://github.com/lordoftheflies/vagrant-vbguest)
 * [Virtual Box](https://www.virtualbox.org/)
   * Tested using Version 5.2.14 r123301 (Qt5.6.1)
 
@@ -74,8 +74,8 @@ pass, fail, untested, unsupported
 
 ## Authors
 
-- [<class 'jinja2.utils.Namespace'>](mailto:<class 'jinja2.utils.Namespace'>)
+- [lordoftheflies](mailto:lordoftheflies)
 
 ## License: [MIT](https://tldrlegal.com/license/mit-license)
 
-* virtualhost_role generated using [ansible_collection_skeleton](https://github.com/<class 'jinja2.utils.Namespace'>/ansible_collection_skeleton)
+* virtualhost_role generated using [ansible_collection_skeleton](https://github.com/lordoftheflies/ansible_collection_skeleton)

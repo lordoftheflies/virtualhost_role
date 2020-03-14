@@ -2,19 +2,15 @@
 # roles/virtualhost_role/meta/main.yml
 
 dependencies:
-
-#  - role: lordoftheflies.resources
-#    resources_on_local : '{{ virtualhost_role_resources_on_local }}'
-#    resources_on_remote: '{{ virtualhost_role_resources_on_remote }}'
-
-#  - role: scaffold
+  - lordoftheflies.ssl_role
+  - lordoftheflies.apache2_role
 galaxy_info:
   role_name: 'virtualhost_role'
-  version: '1.0.0'
+  version: '1.0.1'
   author: 'lordoftheflies'
   description: 'Ansible Galaxy role for maintain virtualhost_role.'
   company: 'Cherubits'
-  license: MIT
+  license: Apache-2.0
   min_ansible_version: '2.9'
   platforms:
     - name: Ubuntu

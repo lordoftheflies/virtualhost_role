@@ -1,0 +1,30 @@
+# Virtualhost for HTTP to HTTPS redirect configuration for {{ inventory_hostname }}.
+
+<VirtualHost *:{{ virtualhost_role_fact_http_port }}>
+
+    ServerName {{ inventory_hostname }}
+    ServerAdmin  webmaster@cherubits.hu
+
+    ProxyRequests       Off
+    ProxyPreserveHost   On
+    AllowEncodedSlashes NoDecode
+
+    <Proxy {{ virtualhost_role_fact_reverse_proxy_protocol }}://{{ virtualhost_role_fact_reverse_proxy_host }}:{{ virtualhost_role_fact_reverse_proxy_port }}*>
+        Order deny,allow
+        Allow from all
+    </Proxy>
+
+    ProxyPass         /  {{ virtualhost_role_fact_reverse_proxy_protocol }}://{{ virtualhost_role_fact_reverse_proxy_host }}:{{ virtualhost_role_fact_reverse_proxy_port }}/ nocanon
+    ProxyPassReverse  /  {{ virtualhost_role_fact_reverse_proxy_protocol }}://{{ virtualhost_role_fact_reverse_proxy_host }}:{{ virtualhost_role_fact_reverse_proxy_port }}/
+    ProxyPassReverse  /  http://{{ inventory_hostname }}/
+    RequestHeader set X-Forwarded-Proto "https"
+    RequestHeader set X-Forwarded-Port "{{ virtualhost_role_fact_https_port }}"
+
+{% if virtualhost_role_fact_secure %}
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/{{ inventory_hostname }}.crt
+    SSLCertificateKeyFile /etc/ssl/private/{{ inventory_hostname }}.key
+{% endif %}
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
